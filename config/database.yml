@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: admin
+
+
+
+development:
+  <<: *default
+  database: final_group_capstone_development
+
+test:
+  <<: *default
+  database: final_group_capstone_test
+
+
+production:
+  <<: *default
+  database: final_group_capstone_production
+  username: postgres
+  password: admin
